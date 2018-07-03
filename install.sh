@@ -2,7 +2,7 @@
 yarn global add create-react-native-app && 
 
 # Creating App
-mkdir $1 &&
+create-react-native-app $1 &&
 
 # Changing directory
 cd $1 &&
