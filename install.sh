@@ -73,5 +73,7 @@ echo $newPackageJson >> package.json &&
 echo "import App from './build/App';
 export default App;" >> App.js &&
 
+# Finally
+npm install
 
 echo "All done!";
