@@ -3,10 +3,10 @@
 yarn global add create-react-native-app && 
 
 # Creating App
-mkdirw $1 &&
+mkdir $1 &&
 
 # Changing directory
-cd CRNAExpoTSExample &&
+cd $1 &&
 
 # Adding typescript
 yarn add typescript tslint -D && 
@@ -24,3 +24,12 @@ tsc --init &&
 # Downloading TSLint config
 wget "https://raw.githubusercontent.com/theapache64/crna-ts/master/tsconfig.json" &&
 
+
+# Updating package.json new with new scripts
+newPackageJson=$(jq '.scripts += {"lint": "tslint src/**/*.ts", "tsc": "tsc", "clean": "rimraf build", "build": "yarn run clean && yarn run tsc --", "watch": "yarn run build -- -w", "watchAndRunAndroid": "concurrently \"yarn run watch\" \"yarn run android\"", "buildRunAndroid": "yarn run build && yarn run watchAndRunAndroid", "watchAndRunIOS": "concurrently \"yarn run watch\" \"yarn run ios\"", "buildRunIOS": "yarn run build && yarn run watchAndRunIOS ", "watchAndStart": "concurrently \"yarn run watch\" \"yarn run start\"", "buildAndStart": "yarn run build && yarn run watchAndStart"}' package.json)
+
+# Deleting old package.json
+rm package.json
+
+# Creating new package.json with new package content
+echo newPackageJson >> package.json
