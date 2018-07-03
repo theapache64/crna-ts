@@ -19,6 +19,8 @@ yarn add concurrently rimraf -D
 yarn add ts-jest @types/jest @types/react-test-renderer -D
 
 # TSLint
-tsc --init
+tsc --init &&
 
+# Downloading TSLint config
+wget "https://raw.githubusercontent.com/theapache64/crna-ts/master/tsconfig.json" &&
 
