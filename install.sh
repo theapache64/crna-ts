@@ -1,13 +1,16 @@
+# Getting app name
+read -p "Enter app name : " appName
+
 # Insalling CRNA
 echo "Creating app..."
 
 yarn global add create-react-native-app && 
 
 # Creating App
-create-react-native-app $1 &&
+create-react-native-app $appName &&
 
 # Changing directory
-cd $1 &&
+cd $appName &&
 
 echo "Adding typescript..."
 
