@@ -1,3 +1,5 @@
+echo "Initializing CRNA-TS"
+
 # Getting app name
 read -p "Enter app name : " appName
 
