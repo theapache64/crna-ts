@@ -79,6 +79,6 @@ echo "import App from './build/App';
 export default App;" >> App.js &&
 
 # Finally
-npm install
+yarn install
 
 echo "All done!";
