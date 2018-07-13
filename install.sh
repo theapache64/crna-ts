@@ -50,9 +50,6 @@ mkdir src build
 # Converting .tsx
 echo "Converting JS files to TSX"
 
-mv App.js src/App.tsx
-mv App.test.js src/App.test.tsx
-
 echo "Adding scripts to package.json"
 
 # Updating package.json new with new scripts
@@ -76,9 +73,20 @@ rm package.json &&
 # Creating new package.json with new package content
 echo $newPackageJson >> package.json &&
 
-# Creating App.js file
-echo "import App from './build/App';
-export default App;" >> App.js &&
+# Removing js files
+
+rm App.js
+rm App.test.js 
+
+
+# Create src/App.tsx
+curl "https://raw.githubusercontent.com/theapache64/crna-ts/master/App.tsx.txt" >> src/App.tsx
+
+# Create src/App.test.tsx
+curl "https://raw.githubusercontent.com/theapache64/crna-ts/master/App.test.tsx.txt" >> src/App.test.tsx
+
+# Create App.js
+curl "https://raw.githubusercontent.com/theapache64/crna-ts/master/App.js.txt" >> App.js
 
 # Finally
 npm install
