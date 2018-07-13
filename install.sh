@@ -40,12 +40,12 @@ wget "https://raw.githubusercontent.com/theapache64/crna-ts/master/tslint.json" 
 
 
 # Removing default ts config
-rm tsconfig.json
+rm tsconfig.json &&
 
 # Adding updated
 wget "https://raw.githubusercontent.com/theapache64/crna-ts/master/tsconfig.json" &&
 
-mkdir src build
+mkdir src build &&
 
 # Converting .tsx
 echo "Converting JS files to TSX"
@@ -75,20 +75,20 @@ echo $newPackageJson >> package.json &&
 
 # Removing js files
 
-rm App.js
-rm App.test.js 
+rm App.js &&
+rm App.test.js &&
 
 
 # Create src/App.tsx
-curl "https://raw.githubusercontent.com/theapache64/crna-ts/master/App.tsx.txt" >> src/App.tsx
+curl "https://raw.githubusercontent.com/theapache64/crna-ts/master/App.tsx.txt" >> src/App.tsx &&
 
 # Create src/App.test.tsx
-curl "https://raw.githubusercontent.com/theapache64/crna-ts/master/App.test.tsx.txt" >> src/App.test.tsx
+curl "https://raw.githubusercontent.com/theapache64/crna-ts/master/App.test.tsx.txt" >> src/App.test.tsx &&
 
 # Create App.js
-curl "https://raw.githubusercontent.com/theapache64/crna-ts/master/App.js.txt" >> App.js
+curl "https://raw.githubusercontent.com/theapache64/crna-ts/master/App.js.txt" >> App.js &&
 
 # Finally
-npm install
+npm install &&
 
 echo "All done!";
