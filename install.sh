@@ -6,7 +6,7 @@ read -p "Enter app name : " appName
 # Insalling CRNA
 echo "Creating app..."
 
-yarn global add create-react-native-app && 
+npm install -g add create-react-native-app && 
 
 # Creating App
 create-react-native-app $appName &&
@@ -17,16 +17,18 @@ cd $appName &&
 echo "Adding typescript..."
 
 # Adding typescript
-yarn add typescript tslint -D && 
-yarn add @types/react @types/react-native @types/react-dom -D &&
+npm install --save-dev typescript tslint && 
+
+# Adding types
+npm install --save-dev @types/react @types/react-native @types/react-dom &&
 
 # We’ll also need rimraf and concurrently to clean the output folder for ts-transpiled-to-js files and concurrently running npm scripts:
-yarn add concurrently rimraf -D &&
+npm install --save-dev concurrently rimraf &&
 
 echo "Adding test modules..."
 
 # For writing Jest unit tests in typescript we will need ts-jest. We’ll also install type defs for Jest and React test renderers:
-yarn add ts-jest @types/jest @types/react-test-renderer -D &&
+npm install --save-dev ts-jest @types/jest @types/react-test-renderer &&
 
 echo "Adding TSLint..."
 
@@ -37,7 +39,7 @@ tsc --init &&
 wget "https://raw.githubusercontent.com/theapache64/crna-ts/master/tslint.json" &&
 
 
-# Removing default
+# Removing default ts config
 rm tsconfig.json
 
 # Adding updated
@@ -79,6 +81,6 @@ echo "import App from './build/App';
 export default App;" >> App.js &&
 
 # Finally
-yarn install
+npm install
 
 echo "All done!";
