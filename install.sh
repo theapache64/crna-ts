@@ -88,6 +88,9 @@ curl "https://raw.githubusercontent.com/theapache64/crna-ts/master/App.test.tsx.
 # Create App.js
 curl "https://raw.githubusercontent.com/theapache64/crna-ts/master/App.js.txt" >> App.js &&
 
+# Adding build folder to gitignore
+echo "build" >> .gitignore
+
 # Finally
 npm install &&
 
