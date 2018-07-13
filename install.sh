@@ -17,7 +17,7 @@ cd $appName &&
 echo "Adding typescript..."
 
 # Adding typescript
-npm install --save-dev typescript tslint && 
+npm install --save-dev typescript tslint tslint-config-airbnb tslint-react && 
 
 # Adding types
 npm install --save-dev @types/react @types/react-native @types/react-dom &&
