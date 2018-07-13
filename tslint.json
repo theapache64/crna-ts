@@ -10,18 +10,6 @@
     // Don't touch below rules
     "jsx-wrap-multiline": false,
     "variable-name": false,
-    "typedef": [
-      true,
-      "call-signature",
-      "arrow-call-signature",
-      "parameter",
-      "arrow-parameter",
-      "property-declaration",
-      "variable-declaration",
-      "member-variable-declaration",
-      "object-destructuring",
-      "array-destructuring"
-    ],
     "no-default-export": true,
     "trailing-comma": false
   }
