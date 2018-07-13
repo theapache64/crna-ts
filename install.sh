@@ -6,7 +6,7 @@ read -p "Enter app name : " appName
 # Insalling CRNA
 echo "Creating app..."
 
-npm install -g add create-react-native-app && 
+sudo npm install -g add create-react-native-app && 
 
 # Creating App
 create-react-native-app $appName &&
